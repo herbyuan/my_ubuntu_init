@@ -28,13 +28,14 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
+          pwd
           ls -l
           echo Add other actions to build,
           echo test, and deploy your project.
       
       - name: Run script
-        # run run.script
+        # run run.sh
         run: |
-          chmod +x run.script
-          bash run.script
+          chmod +x run.sh
+          bash run.sh
           
