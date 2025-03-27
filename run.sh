@@ -11,27 +11,43 @@
 #!/bin/bash
 
 # echo username
-echo "Hello, $USER. What would you like to do today?"
+echo "Running script as [$USER]."
+echo "Please make sure you have sudo permission."
 # if [ "$EUID" -ne 0 ]
 #   then echo "Please run as root"
 #   exit
 # fi
 
+wget -qO- https://www.gershnik.com/apt-repo/conf/pgp-key.public \
+  | gpg --dearmor \
+  | sudo tee /usr/share/keyrings/gershnik.gpg >/dev/null
 
-# print system info
-uname -a
-cat /etc/os-release
+echo "deb" \
+"[arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/gershnik.gpg]" \
+"https://www.gershnik.com/apt-repo/" \
+"base" \
+"main" \
+  | sudo tee /etc/apt/sources.list.d/wsddn.list >/dev/null
 
-# install dependencies
 sudo apt update
+sudo apt install wsddn
 
-# install neofetch
-sudo apt-get install neofetch -y
-neofetch
 
-sudo apt install build-essential -y
-sudo apt install cmake -y
-sudo apt install git -y
+
+# # print system info
+# uname -a
+# cat /etc/os-release
+
+# # install dependencies
+# sudo apt update
+
+# # install neofetch
+# sudo apt-get install neofetch -y
+# neofetch
+
+# sudo apt install build-essential -y
+# sudo apt install cmake -y
+# sudo apt install git -y
 
 
 
