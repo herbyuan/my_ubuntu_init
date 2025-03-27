@@ -23,15 +23,15 @@ uname -a
 cat /etc/os-release
 
 # install dependencies
-apt-get update
+sudo apt update
 
 # install neofetch
-apt-get install neofetch -y
+sudo apt-get install neofetch -y
 neofetch
 
-apt-install build-essential -y
-apt-install cmake -y
-apt-install git -y
+sudo apt install build-essential -y
+sudo apt install cmake -y
+sudo apt install git -y
 
 
 
