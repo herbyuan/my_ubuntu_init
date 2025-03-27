@@ -10,11 +10,13 @@
 
 #!/bin/bash
 
-# check for root
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
-  exit
-fi
+# echo username
+echo "Hello, $USER. What would you like to do today?"
+# if [ "$EUID" -ne 0 ]
+#   then echo "Please run as root"
+#   exit
+# fi
+
 
 # print system info
 uname -a
