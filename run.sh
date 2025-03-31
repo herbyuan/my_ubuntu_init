@@ -2,7 +2,7 @@
  # @Author: Zhuoyuan He
  # @Date: 2025-03-27 13:53:27
  # @LastEditors: Zhuoyuan He
- # @LastEditTime: 2025-03-31 15:51:16
+ # @LastEditTime: 2025-03-31 15:53:16
  # @FileName: run.sh
  # @Description: 
  # 
@@ -22,6 +22,9 @@ sudo bash components/alist/install.sh
 
 sudo bash components/jellyfin/install.sh
 
+sudo bash components/transmission/install.sh
+
+sudo bash components/qbittorrent/install.sh
 
 # wget -qO- https://www.gershnik.com/apt-repo/conf/pgp-key.public \
 #   | gpg --dearmor \
