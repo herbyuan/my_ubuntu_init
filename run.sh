@@ -2,7 +2,7 @@
  # @Author: Zhuoyuan He
  # @Date: 2025-03-27 13:53:27
  # @LastEditors: Zhuoyuan He
- # @LastEditTime: 2025-03-31 15:48:20
+ # @LastEditTime: 2025-03-31 15:51:16
  # @FileName: run.sh
  # @Description: 
  # 
@@ -18,7 +18,9 @@ echo "Please make sure you have sudo permission."
 #   exit
 # fi
 
-bash components/alist/install.sh
+sudo bash components/alist/install.sh
+
+sudo bash components/jellyfin/install.sh
 
 
 # wget -qO- https://www.gershnik.com/apt-repo/conf/pgp-key.public \
