@@ -1,0 +1,7 @@
+
+
+ZSH_THEME="clean"
+DISABLE_AUTO_UPDATE="true" 
+plugins=(git zsh-autosuggestions)
+
+export LANG=en_US.UTF-8
