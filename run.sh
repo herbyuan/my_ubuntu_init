@@ -1,8 +1,8 @@
-# ###
+###
  # @Author: Zhuoyuan He
  # @Date: 2025-03-27 13:53:27
  # @LastEditors: Zhuoyuan He
- # @LastEditTime: 2025-03-27 13:53:34
+ # @LastEditTime: 2025-03-31 15:48:20
  # @FileName: run.sh
  # @Description: 
  # 
@@ -18,19 +18,22 @@ echo "Please make sure you have sudo permission."
 #   exit
 # fi
 
-wget -qO- https://www.gershnik.com/apt-repo/conf/pgp-key.public \
-  | gpg --dearmor \
-  | sudo tee /usr/share/keyrings/gershnik.gpg >/dev/null
+bash components/alist/install.sh
 
-echo "deb" \
-"[arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/gershnik.gpg]" \
-"https://www.gershnik.com/apt-repo/" \
-"base" \
-"main" \
-  | sudo tee /etc/apt/sources.list.d/wsddn.list >/dev/null
 
-sudo apt update
-sudo apt install wsddn
+# wget -qO- https://www.gershnik.com/apt-repo/conf/pgp-key.public \
+#   | gpg --dearmor \
+#   | sudo tee /usr/share/keyrings/gershnik.gpg >/dev/null
+
+# echo "deb" \
+# "[arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/gershnik.gpg]" \
+# "https://www.gershnik.com/apt-repo/" \
+# "base" \
+# "main" \
+#   | sudo tee /etc/apt/sources.list.d/wsddn.list >/dev/null
+
+# sudo apt update
+# sudo apt install wsddn
 
 
 

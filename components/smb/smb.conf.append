@@ -1,0 +1,27 @@
+
+[TimeMachine]
+    comment = MacOS time machine backup
+    path = /public/TimeMachine
+    browseable = yes
+    public = no
+    writable = yes
+    create mask = 0700
+    valid users = @herbert,@root,@pt
+    admin users = herbert
+    # 加载模块以支持AAPL拓展，注意顺序很重要！
+    vfs objects = catia fruit streams_xattr
+    # 支持aapl
+    fruit:aapl = yes
+    # 存储os x的元数据
+    fruit:metadata = stream
+    # 设置服务器在finder中的图标
+    fruit:model = TimeCapsule
+    # 支持time machine，非常重要！
+    fruit:time machine = yes
+    # 文件清理的一些配置
+    fruit:posix_rename = yes
+    fruit:veto_appledouble = no
+    fruit:wipe_intentionally_left_blank_rfork = yes
+    fruit:delete_empty_adfiles = yes
+
+

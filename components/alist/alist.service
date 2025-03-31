@@ -1,0 +1,13 @@
+[Unit]
+Description=alist
+After=network.target
+ 
+[Service]
+Type=simple
+WorkingDirectory=path_alist
+ExecStart=path_alist/alist server
+Restart=on-failure
+ 
+[Install]
+WantedBy=multi-user.target
+
