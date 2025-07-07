@@ -26,4 +26,4 @@ sudo chmod 775 /usr/bin/mihomo
 sudo systemctl enable mihomo
 sudo systemctl start mihomo
 
-echo "mihomo installed"
+echo "mihomo installed" 
