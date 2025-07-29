@@ -3,7 +3,7 @@
  # @Author: Zhuoyuan He
  # @Date: 2025-03-27 17:24:52
  # @LastEditors: Zhuoyuan He
- # @LastEditTime: 2025-03-27 17:24:58
+ # @LastEditTime: 2025-07-29 11:49:47
  # @FileName: update_mihomo_conf.sh
  # @Description: 
  # 
@@ -19,11 +19,11 @@ sed -i 's/^allow-lan:.*$/allow-lan: true/' "$file"
 
 # 替换或者追加 secret 行
 if grep -q "^secret:" "$file"; then
-  # 如果文件中存在 secret: 行，替换为 secret: "Cc991226"
-  sed -i 's/^secret:.*$/secret: "Cc991226"/' "$file"
+  # 如果文件中存在 secret: 行，替换为 secret: "password"
+  sed -i 's/^secret:.*$/secret: "password"/' "$file"
 else
   # 在第一行前插入新行
-  sed -i '1s/^/secret: "Cc991226"\n/' $file
+  sed -i '1s/^/secret: "password"\n/' $file
 fi
 
 chmod 775 /etc/mihomo/config.yaml
